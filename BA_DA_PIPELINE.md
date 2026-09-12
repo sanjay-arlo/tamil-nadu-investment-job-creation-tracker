@@ -1,19 +1,22 @@
 # BA / DA Delivery Pipeline
 
 ## Business question
-Which investment projects are under-realised or overdue and therefore require intervention?
+Which investment projects are under-realised or overdue and therefore require management intervention?
 
-## 01 — Excel
-Clean the project register, reconcile announced vs realised investment and promised vs verified jobs, and create an exception view using ageing and realisation thresholds.
+## 01 — Excel — mandatory first pass
+Clean the project register, reconcile announced vs realised investment and promised vs verified jobs, use formulas/pivots, calculate ageing and create a project exception queue.
 
-## 02 — SQL
-Build reproducible funnel, ageing, sector/district concentration and jobs-impact queries.
+## 02 — Python (Pandas + NumPy) — optional
+Use Python for EDA, ageing distributions, anomaly checks, sector/district concentration analysis and automated transformation when it adds value.
 
-## 03 — Power BI
-Build: Investment Executive → Realisation Funnel → Project Exceptions → Jobs Scenario. Use sector, district and project drill-through.
+## 03 — SQL — mandatory analytical layer
+Use joins, CTEs, aggregations and window functions for investment funnels, realisation rankings, ageing cohorts, sector/district benchmarks and jobs-impact queues.
 
-## 04 — Decision
-Escalate high-value, low-realisation projects with clear owner, next milestone and expected employment impact.
+## 04 — Power BI — mandatory decision interface
+Build the model, DAX measures, slicers and drill-through: Investment Executive → Realisation Funnel → Project Exceptions → Jobs Scenario.
+
+## 05 — Decision — mandatory outcome
+Escalate high-value, low-realisation or overdue projects with priority, owner, next milestone, expected employment impact and assumptions.
 
 ## Acceptance criteria
-Investment and job totals reconcile; exception thresholds are governed; synthetic project records are explicitly labelled.
+Investment and job totals reconcile across stages; exception thresholds are governed; synthetic project records are explicitly labelled.
