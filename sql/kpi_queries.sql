@@ -1,0 +1,2 @@
+SELECT sector, COUNT(*) AS records, SUM(announced_investment_inr) AS announced_investment_inr, SUM(realised_investment_inr) AS realised_investment_inr, SUM(jobs_promised) AS jobs_promised, SUM(jobs_verified) AS jobs_verified FROM sample_tn_investment_mou_tracker GROUP BY sector ORDER BY announced_investment_inr DESC;
+SELECT mou_id, sector, district, announced_investment_inr, realisation_pct, jobs_promised, jobs_verified, (jobs_promised-jobs_verified) AS jobs_gap FROM sample_tn_investment_mou_tracker ORDER BY jobs_gap DESC LIMIT 20;
